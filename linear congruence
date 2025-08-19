@@ -14,7 +14,7 @@ int extendedGCD(int a, int b, int &x, int &y) {
     return gcd;
 }
 
-// Solves a·x = b (mod m)
+// Solves aÂ·x = b (mod m)
 void solveLinearCongruence(int a, int b, int m) {
     int x, y;
     int d = extendedGCD(a, m, x, y); // d = gcd(a, m)
@@ -29,7 +29,7 @@ void solveLinearCongruence(int a, int b, int m) {
     int x0 = (x * (b / d)) % m;
     if (x0 < 0) x0 += m; // Make it positive
 
-    cout << "Solutions to " << a << "·x = " << b << " mod " << m << ":\n";
+    cout << "Solutions to " << a << "Â·x = " << b << " mod " << m << ":\n";
     for (int i = 0; i < d; ++i) {
         int solution = (x0 + i * (m / d)) % m;
         cout << "x = " << solution << " mod " << m << endl;
@@ -38,7 +38,7 @@ void solveLinearCongruence(int a, int b, int m) {
 
 int main() {
     int a, b, m;
-    cout << "Enter values for a, b, and m in the equation a·x = b mod m:\n";
+    cout << "Enter values for a, b, and m in the equation aÂ·x = b mod m:\n";
     cin >> a >> b >> m;
 
     solveLinearCongruence(a, b, m);
